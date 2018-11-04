@@ -4,6 +4,8 @@ class ClockController {
 
         this.input = new p5.AudioIn();
         this.input.start();
+
+        this.threshold = 0.5;
     }
 
     tick() {
@@ -11,7 +13,12 @@ class ClockController {
     }
 
     audio(){
-        this.input.getLevel() > 0.5 ? this.tick() : null;
+        this.input.getLevel() > this.threshold ? this.tick() : null;
+    }
+
+    setThreshold(value) {
+        console.log("Setting threshold to " + value);
+        this.threshold = value;
     }
 }
 
