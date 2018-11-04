@@ -9,6 +9,7 @@ function setup() {
 }
 
 function draw() {
+    clockController.audio();
     sketchController.draw();
 }
 
@@ -18,6 +19,7 @@ function mouseClicked() {
 
 function keyPressed() {
     key == " " ? clockController.tick() : null;
+    keyCode == ENTER ? sketchController.changeSketch() : null;
   }
 
 function windowResized() {

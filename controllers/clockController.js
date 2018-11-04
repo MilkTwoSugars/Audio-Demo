@@ -1,10 +1,17 @@
 class ClockController {
     constructor(sketchController) {
         this.sketchController = sketchController;
+
+        this.input = new p5.AudioIn();
+        this.input.start();
     }
 
     tick() {
         this.sketchController.tick();
+    }
+
+    audio(){
+        this.input.getLevel() > 0.5 ? this.tick() : null;
     }
 }
 

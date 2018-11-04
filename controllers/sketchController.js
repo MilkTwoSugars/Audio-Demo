@@ -19,7 +19,9 @@ class SketchController {
     changeSketch() {
         this.sketchIndex++;
 
-        if (this.sketchIndex > this.sketches.length) {
+        console.log(this.sketchIndex);
+
+        if (this.sketchIndex > this.sketches.length - 1) {
             this.sketchIndex = 0;
         }
 
@@ -27,8 +29,7 @@ class SketchController {
     }
 
     initialise() {
-        let one = new SketchOne();
-
-        this.sketches.push(one);
+        this.sketches[0] = new SketchOne();
+        this.sketches[1] = new SketchTwo();
     }
 }
