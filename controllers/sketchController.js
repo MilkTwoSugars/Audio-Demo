@@ -10,6 +10,11 @@ class SketchController {
 
     draw() {
         this.currentSketch.draw();
+
+        if (frameCount % 10000 == 0) {
+            this.changeSketch();
+        }
+
     }
 
     tick(volume) {
