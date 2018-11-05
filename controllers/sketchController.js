@@ -12,8 +12,8 @@ class SketchController {
         this.currentSketch.draw();
     }
 
-    tick() {
-        this.currentSketch.tick();
+    tick(volume) {
+        this.currentSketch.tick(volume);
     }
 
     changeSketch() {
@@ -28,8 +28,14 @@ class SketchController {
         this.currentSketch = this.sketches[this.sketchIndex];
     }
 
+    changeSketchTo(index) {
+        this.sketchIndex = index;
+        this.currentSketch = this.sketches[this.sketchIndex];
+    }
+
     initialise() {
-        this.sketches[0] = new SketchOne();
-        this.sketches[1] = new SketchTwo();
+        this.sketches[0] = new SketchZero();
+        this.sketches[1] = new SketchOne();
+        this.sketches[2] = new SketchTwo();
     }
 }

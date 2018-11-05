@@ -20,7 +20,7 @@ class SketchTwo {
         for (var i = 0; i < 8; i++) {
             push()
             rotateX(frameCount * 0.005)
-            rotateY(frameCount * 0.01 + (i * this.modifier))
+            rotateY(frameCount * 0.001 + (i * this.modifier))
             //rotateZ(frameCount * 0.015)
             stroke(this.colour, 255, 255);
             sphere((this.s * i))
@@ -29,7 +29,7 @@ class SketchTwo {
 
         this.modifier = lerp(this.modifier, this.targetModifier, 0.1)
         this.colour = lerp(this.colour, this.targetColour, 0.1)
-        this.s = lerp(this.s, this.ts, 0.1)
+        this.s = lerp(this.s, this.ts, 0.001)
 
     }
 

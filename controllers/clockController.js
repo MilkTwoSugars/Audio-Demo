@@ -6,19 +6,41 @@ class ClockController {
         this.input.start();
 
         this.threshold = 0.5;
+
+        this.hasReset = true;
     }
 
     tick() {
-        this.sketchController.tick();
+        let v = this.input ? this.input.getLevel() : 0;
+        this.sketchController.tick(v);
     }
 
     audio(){
         this.input.getLevel() > this.threshold ? this.tick() : null;
     }
 
-    setThreshold(value) {
-        console.log("Setting threshold to " + value);
-        this.threshold = value;
+    increaseThreshold(){
+        this.threshold += 1 / 10;
+
+        if (this.threshold > 0.9) {
+            this.threshold = 0.9
+        }
+
+        console.log("Threshold is now " + this.threshold)
+    }
+
+    decreaseThreshold(){
+        this.threshold -= 1 / 10;
+
+        if (this.threshold < 0) {
+            this.threshold = 0
+        }
+
+        console.log("Threshold is now " + this.threshold)
+    }
+
+    getVolume() {
+        return this.input.getLevel();
     }
 }
 

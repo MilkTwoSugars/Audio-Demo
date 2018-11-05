@@ -23,7 +23,7 @@ class SketchOne {
             rotateY(frameCount * 0.01 + (i * this.modifier))
             rotateZ(frameCount * 0.015)
             stroke(this.colour, 255, 255);
-            box((this.s * 2) + sin(frameCount * 0.01) * this.s, (this.s * 2) + sin(frameCount * 0.02) * this.s, (this.s * 2) + sin(frameCount * 0.03) * this.s)
+            box((this.s * 2) + sin(frameCount * 0.01) * this.s, 0, this.s)
             pop()
         }
 
@@ -34,7 +34,7 @@ class SketchOne {
     }
 
     tick(){
-        this.targetModifier += 1
+        this.targetModifier += 0.05
         this.targetColour = random(255);
         this.ts = random(250, 500)
     }
