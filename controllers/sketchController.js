@@ -21,7 +21,7 @@ class SketchController {
 
         console.log(this.sketchIndex);
 
-        if (this.sketchIndex > this.sketches.length - 1) {
+        if (this.sketchIndex >= this.sketches.length) {
             this.sketchIndex = 0;
         }
 
@@ -37,5 +37,7 @@ class SketchController {
         this.sketches[0] = new SketchZero();
         this.sketches[1] = new SketchOne();
         this.sketches[2] = new SketchTwo();
+        this.sketches[3] = new SketchThree();
+        this.sketches[4] = new SketchFour();
     }
 }

@@ -26,8 +26,8 @@ function keyPressed() {
     keyCode == 49 ? sketchController.changeSketchTo(0) : null;
     keyCode == 50 ? sketchController.changeSketchTo(1) : null;
     keyCode == 51 ? sketchController.changeSketchTo(2) : null;
-    // keyCode == 52 ? sketchController.changeSketchTo(3) : null;
-    // keyCode == 53 ? sketchController.changeSketchTo(4) : null;
+    keyCode == 52 ? sketchController.changeSketchTo(3) : null;
+    keyCode == 53 ? sketchController.changeSketchTo(4) : null;
     // keyCode == 54 ? sketchController.changeSketchTo(5) : null;
     // keyCode == 55 ? sketchController.changeSketchTo(6) : null;
     // keyCode == 56 ? sketchController.changeSketchTo(7) : null;
