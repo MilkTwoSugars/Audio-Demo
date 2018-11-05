@@ -1,6 +1,6 @@
-class SketchFour {
+class SketchFive {
     constructor() {
-        this.cube = new SketchFourCube(createVector(0, 0), 150);
+        this.cube = new SketchFiveCube(createVector(0, 0), 150);
 
         this.s = 250;
         this.ts = 250;
@@ -34,7 +34,7 @@ class SketchFour {
     }
 }
 
-class SketchFourCube {
+class SketchFiveCube {
     constructor(position, size) {
         this.pos = position;
         this.size = size;
@@ -58,10 +58,10 @@ class SketchFourCube {
     render(colour) {
         noFill();
 
-        strokeWeight(1);
+        strokeWeight(6 + sin(frameCount * 0.001) * 5);
         for (var i = 0; i < this.trail.length; i++) {
             push();
-            stroke(i, colour, 255);
+            stroke((i / 50) * i, 255, 255);
             rotate(i)
             translate(this.trail[i].x, this.trail[i].y, this.trail[i].z);
             box(this.size * i, 0, 0);

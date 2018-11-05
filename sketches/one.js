@@ -23,7 +23,7 @@ class SketchOne {
             rotateY(frameCount * 0.01 + (i * this.modifier))
             rotateZ(frameCount * 0.015)
             stroke(this.colour, 255, 255);
-            box((this.s * 2) + sin(frameCount * 0.01) * this.s, 0, this.s)
+            box((this.s) + sin(frameCount * 0.01), 0, this.s)
             pop()
         }
 

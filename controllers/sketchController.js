@@ -6,12 +6,14 @@ class SketchController {
         this.initialise();
 
         this.currentSketch = this.sketches[this.sketchIndex];
+
+        this.autoplay = true;
     }
 
     draw() {
         this.currentSketch.draw();
 
-        if (frameCount % 10000 == 0) {
+        if (frameCount % 10000 == 0 && this.autoplay) {
             this.changeSketch();
         }
 
@@ -21,10 +23,18 @@ class SketchController {
         this.currentSketch.tick(volume);
     }
 
+    enableAutoplay(){
+        this.autoplay = true;
+        console.log("Autoplay has been enabled!")
+    }
+
+    disableAutoplay(){
+        this.autoplay = false;
+        console.log("Autoplay has been disabled!");
+    }
+
     changeSketch() {
         this.sketchIndex++;
-
-        console.log(this.sketchIndex);
 
         if (this.sketchIndex >= this.sketches.length) {
             this.sketchIndex = 0;
@@ -44,5 +54,6 @@ class SketchController {
         this.sketches[2] = new SketchTwo();
         this.sketches[3] = new SketchThree();
         this.sketches[4] = new SketchFour();
+        this.sketches[5] = new SketchFive();
     }
 }

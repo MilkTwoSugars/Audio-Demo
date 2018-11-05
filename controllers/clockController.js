@@ -19,6 +19,11 @@ class ClockController {
         this.input.getLevel() > this.threshold ? this.tick() : null;
     }
 
+    resetThreshold() {
+        this.threshold = 0.5;
+        console.log("Threshold is now " + this.threshold);
+    }
+
     increaseThreshold(){
         this.threshold += 1 / 10;
 
