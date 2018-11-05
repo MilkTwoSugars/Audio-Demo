@@ -14,7 +14,7 @@ class SketchZero {
         
 
         let volume = clockController.getVolume();
-
+        push();
         rotate(frameCount * 0.01)
         rotateY(frameCount * 0.02)
 
@@ -39,6 +39,7 @@ class SketchZero {
             this.currentShape = floor(random(0, 4))
             
         }
+        pop();
     }
 
     drawCurrentShape() {
