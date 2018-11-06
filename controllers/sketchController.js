@@ -13,7 +13,7 @@ class SketchController {
     draw() {
         this.currentSketch.draw();
 
-        if (frameCount % 10000 == 0 && this.autoplay) {
+        if (frameCount % 12000 == 0 && this.autoplay) {
             this.changeSketch();
         }
 
